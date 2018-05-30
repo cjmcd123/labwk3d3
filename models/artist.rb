@@ -19,8 +19,13 @@ class Artist
 
   def self.all()
     sql = "SELECT * FROM artists"
-    customers = SqlRunner.run(sql)
-    return customers.map{|person| Artist.new(person)}
+    artists = SqlRunner.run(sql)
+    return artists.map{|person| Artist.new(person)}
+  end
+
+  def self.delete_all()
+  sql = "DELETE FROM artists"
+  SqlRunner.run(sql)
   end
 
 end
