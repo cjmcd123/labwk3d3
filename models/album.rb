@@ -62,6 +62,12 @@ class Album
     return album.map{|group| Album.new(group)}
   end
 
+  def self.all_org()
+    sql = "SELECT * FROM albums ORDER BY artist_id"
+    album = SqlRunner.run(sql)
+    return album.map{|group| Album.new(group)}
+  end
+
   def self.delete_all()
   sql = "DELETE FROM albums"
   SqlRunner.run(sql)
