@@ -18,7 +18,7 @@ album1 = Album.new({
   'artist_id' => artist1.id
 })
 album2 = Album.new({
-  'title' => 'Bold as Love',
+  'title' => 'Bold Love',
   'genre' => 'Psychedelic rock',
   'artist_id' => artist1.id
 })
@@ -48,6 +48,12 @@ album3.save()
 album4.save()
 album5.save()
 album6.save()
+
+artist3.name = 'Elvis Presley'
+artist3.update()
+
+album2.title = 'Bold as Love'
+album2.update()
 
 binding.pry
 nil
